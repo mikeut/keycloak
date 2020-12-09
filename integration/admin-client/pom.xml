@@ -31,7 +31,8 @@
     <description/>
 
     <properties>
-        <resteasy.versions>3.9.1.Final</resteasy.versions>
+        <resteasy.versions>4.5.8.Final</resteasy.versions>
+        <smallrye-config.version>1.6.2</smallrye-config.version>
     </properties>
 
     <dependencies>
@@ -59,6 +60,12 @@
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-client</artifactId>
             <version>${resteasy.versions}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.smallrye.config</groupId>
+                    <artifactId>smallrye-config</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
@@ -74,6 +81,11 @@
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxb-provider</artifactId>
             <version>${resteasy.versions}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.smallrye.config</groupId>
+            <artifactId>smallrye-config</artifactId>
+            <version>${smallrye-config.version}</version>
         </dependency>
     </dependencies>
 
